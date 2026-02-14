@@ -1,0 +1,2100 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background-color: #0a0a0a;
+    color: white;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Page Styling */
+.page {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.page.active {
+    display: block;
+}
+
+/* PAGE 1 - Landing Page */
+#page1 {
+    background: linear-gradient(135deg, #ff69b4, #ff1493, #ff0066);
+}
+
+.fullscreen-bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+.hearts-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 2%, transparent 4%),
+        radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.2) 3%, transparent 5%),
+        radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.2) 2.5%, transparent 4.5%),
+        radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.2) 3%, transparent 5%),
+        radial-gradient(circle at 30% 60%, rgba(255, 255, 255, 0.2) 2%, transparent 4%),
+        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.2) 3%, transparent 5%);
+    background-size: 100% 100%;
+    z-index: 0;
+}
+
+.center-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.question {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    color: white;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    line-height: 1.3;
+}
+
+.buttons {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.yes-btn, .no-btn {
+    padding: 20px 50px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 180px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, #ff0066, #ff3385);
+    color: white;
+}
+
+.yes-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 0, 102, 0.4);
+    background: linear-gradient(135deg, #ff3385, #ff66a3);
+}
+
+.no-btn {
+    background: linear-gradient(135deg, #666, #999);
+    color: white;
+    position: relative;
+}
+
+.no-btn:hover {
+    background: linear-gradient(135deg, #777, #aaa);
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(20, 20, 20, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffd700;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.nav-logo i {
+    color: #ff69b4;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+    border-color: #ffd700;
+    transform: translateY(-3px);
+}
+
+/* PAGE 2 - Love Letter */
+.letter-page {
+    padding-top: 80px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a0b0b, #2a1b1b, #3a2b2b);
+    position: relative;
+}
+
+.gold-border {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        #d4af37 0%, 
+        #ffd700 20%, 
+        #fff8dc 40%, 
+        #ffd700 60%, 
+        #d4af37 80%, 
+        #b8860b 100%);
+    z-index: 1;
+}
+
+.top-border {
+    top: 0;
+}
+
+.bottom-border {
+    bottom: 0;
+}
+
+.letter-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.letter-wrapper {
+    background: rgba(255, 245, 245, 0.95);
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.letter-header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 3px solid rgba(255, 105, 180, 0.3);
+    padding-bottom: 20px;
+}
+
+.letter-header h1 {
+    color: #b22222;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.letter-header h1 i {
+    color: #ff69b4;
+}
+
+.letter-date {
+    color: #666;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.letter-content {
+    color: #444;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.letter-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.greeting {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #b22222;
+    margin-bottom: 30px !important;
+}
+
+.closing {
+    margin-top: 40px !important;
+    font-weight: 600;
+    color: #b22222;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #d4af37;
+    text-align: right;
+    margin-top: -10px !important;
+}
+
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* PAGE 3 - Hero Section & Photo Gallery */
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 60px; /* Account for navbar */
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(138, 43, 226, 0.3));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.love-timer {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(0.1px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 105, 180, 0.3);
+    max-width: 800px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.timer-heart {
+    font-size: 3rem;
+    color: #ff69b4;
+    margin-bottom: 20px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #ffb6c1;
+    margin-bottom: 30px;
+}
+
+.hero-quote {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #fff;
+    margin: 40px 0;
+    padding: 20px;
+    border-top: 2px solid rgba(255, 215, 0, 0.3);
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    font-style: italic;
+}
+
+.time-breakdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+}
+
+.time-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.time-label {
+    font-size: 1rem;
+    color: #ffb6c1;
+    margin-top: 5px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #ffd700;
+}
+
+.scroll-indicator i {
+    font-size: 1.5rem;
+    color: #ff69b4;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* Photo Gallery Section */
+.photo-gallery-section {
+    background: linear-gradient(135deg, #1a0b0b, #2a1b2b, #1b1a2b);
+    padding: 80px 20px;
+    min-height: 100vh;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.gallery-subtitle {
+    text-align: center;
+    color: #ffb6c1;
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.photo-item {
+    perspective: 1000px;
+}
+
+.photo-frame {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    height: 100%;
+    border: 2px solid rgba(255, 105, 180, 0.2);
+    transform-style: preserve-3d;
+}
+
+.photo-frame:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    border-color: #ff69b4;
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
+}
+
+.photo-placeholder {
+    height: 200px;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(138, 43, 226, 0.1));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.photo-placeholder i {
+    font-size: 3rem;
+    color: #ff69b4;
+    margin-bottom: 15px;
+}
+
+.photo-placeholder p {
+    color: #ffd700;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.photo-caption {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.photo-caption h3 {
+    color: #ffd700;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.photo-caption p {
+    color: #e6e6e6;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+.memory-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease;
+    display: block; /* Removes extra space below image */
+}
+
+/* Love Note */
+.love-note {
+    max-width: 800px;
+    margin: 80px auto 0;
+    background: rgba(255, 105, 180, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    border: 2px solid rgba(255, 105, 180, 0.3);
+    position: relative;
+}
+
+.note-content {
+    position: relative;
+}
+
+.note-content i:first-child {
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    font-size: 2rem;
+    color: #ff69b4;
+}
+
+.note-content i:last-child {
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+    font-size: 2rem;
+    color: #ff69b4;
+}
+
+.note-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #fff;
+    text-align: center;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.note-signature {
+    text-align: right;
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Responsive Design for Page 3 */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-quote {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+    
+    .time-breakdown {
+        gap: 20px;
+    }
+    
+    .time-unit {
+        min-width: 100px;
+    }
+    
+    .time-number {
+        font-size: 2rem;
+    }
+    
+    .gallery-title {
+        font-size: 2.5rem;
+    }
+    
+    .photo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    
+    .note-text {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-quote {
+        font-size: 1.3rem;
+    }
+    
+    .time-breakdown {
+        gap: 15px;
+    }
+    
+    .time-unit {
+        min-width: 80px;
+    }
+    
+    .time-number {
+        font-size: 1.8rem;
+    }
+    
+    .gallery-title {
+        font-size: 2rem;
+    }
+    
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .note-text {
+        font-size: 1.3rem;
+    }
+}
+
+/* Video Fallback Styling */
+.hero-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Custom Scrollbar for Photo Gallery */
+.photo-gallery-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.photo-gallery-section::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.photo-gallery-section::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ff69b4, #8a2be2);
+    border-radius: 4px;
+}
+
+.photo-gallery-section::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ff3385, #9b30ff);
+}
+/* Make videos work in the photo grid */
+.memory-photo video,
+.photo-frame video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    background: #000;
+}
+
+/* Style for video controls (optional) */
+.photo-frame video::-webkit-media-controls {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.photo-frame video:hover::-webkit-media-controls {
+    opacity: 1;
+}
+
+/* For videos with poster images */
+.photo-frame video[poster] {
+    object-fit: cover;
+}
+
+/* PAGE 4 - Guitar Video Gallery */
+
+/* Couple Hero Section */
+.couple-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    background-image: url('https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-top: 60px;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+    overflow: hidden;
+}
+
+.couple-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(138, 43, 226, 0.4) 0%,
+        rgba(255, 105, 180, 0.3) 50%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.love-phrase {
+    text-align: left;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 105, 180, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.phrase-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #ffd700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.heart-divider {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.heart-divider i {
+    color: #ff69b4;
+    font-size: 1.5rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+.heart-divider i:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.heart-divider i:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.phrase-subtext {
+    color: #ffb6c1;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Video Gallery Section */
+.video-gallery-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2b 100%);
+    padding: 60px 20px;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.gallery-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.gallery-subtitle {
+    color: #ffb6c1;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    background: linear-gradient(135deg, #8a2be2, #ff69b4);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.volume-control i {
+    color: #ff69b4;
+    font-size: 1.2rem;
+}
+
+#volumeSlider {
+    width: 100px;
+    height: 5px;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    outline: none;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ff69b4;
+    cursor: pointer;
+}
+
+/* Video Grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.video-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 105, 180, 0.1);
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff69b4;
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.2);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.guitar-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.video-wrapper:hover .guitar-video {
+    transform: scale(1.05);
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-wrapper:hover .video-overlay {
+    opacity: 1;
+}
+
+.play-btn {
+    background: rgba(255, 105, 180, 0.8);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    background: rgba(255, 105, 180, 1);
+    transform: scale(1.1);
+}
+
+.video-info {
+    padding: 20px;
+}
+
+.video-info h3 {
+    color: #ffd700;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.video-date {
+    color: #ffb6c1;
+    font-size: 0.9rem;
+}
+
+/* Mini Player */
+.mini-player {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid rgba(255, 105, 180, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.now-playing {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.now-playing i {
+    font-size: 1.8rem;
+    color: #ff69b4;
+}
+
+.track-info {
+    flex: 1;
+}
+
+.track-title {
+    color: #ffd700;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.track-status {
+    color: #ffb6c1;
+    font-size: 0.9rem;
+}
+
+.player-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.player-btn {
+    background: rgba(255, 105, 180, 0.2);
+    border: 2px solid rgba(255, 105, 180, 0.3);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.player-btn:hover {
+    background: rgba(255, 105, 180, 0.4);
+    border-color: #ff69b4;
+}
+
+.main-play-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #ff69b4, #8a2be2);
+}
+
+/* Dedication Box */
+.dedication-box {
+    max-width: 700px;
+    margin: 60px auto 30px;
+    background: rgba(255, 105, 180, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    border: 2px solid rgba(255, 105, 180, 0.3);
+    text-align: center;
+    position: relative;
+}
+
+.dedication-content {
+    position: relative;
+}
+
+.dedication-content i:first-child {
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    font-size: 1.8rem;
+    color: #ff69b4;
+}
+
+.dedication-content i:last-child {
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+    font-size: 1.8rem;
+    color: #ff69b4;
+}
+
+.dedication-text {
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+    font-style: italic;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+    color: #ffd700;
+    margin-top: 25px;
+}
+
+/* Floating Elements */
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .video-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .couple-hero {
+        height: 50vh;
+        min-height: 400px;
+    }
+    
+    .phrase-text {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .couple-hero {
+        height: 40vh;
+        min-height: 350px;
+        padding: 20px;
+    }
+    
+    .love-phrase {
+        padding: 20px;
+    }
+    
+    .phrase-text {
+        font-size: 1.8rem;
+    }
+    
+    .phrase-subtext {
+        font-size: 1rem;
+    }
+    
+    .gallery-title {
+        font-size: 2.2rem;
+    }
+    
+    .mini-player {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .now-playing {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .couple-hero {
+        height: 35vh;
+        min-height: 300px;
+    }
+    
+    .phrase-text {
+        font-size: 1.5rem;
+    }
+    
+    .gallery-title {
+        font-size: 1.8rem;
+    }
+    
+    .gallery-controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .dedication-box {
+        padding: 25px 15px;
+    }
+    
+    .dedication-text {
+        font-size: 1rem;
+    }
+}
+
+/* Video Playing State */
+.video-card.playing {
+    border-color: #ff69b4;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+}
+
+.video-card.playing .video-info h3 {
+    color: #ff69b4;
+}
+
+.video-card.playing .play-btn {
+    background: rgba(255, 0, 100, 0.9);
+}
+/* PAGE 4 - Guitar Video Gallery */
+
+/* Couple Hero Section */
+.couple-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    background-image: url('images/couple-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-top: 60px;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+}
+
+.couple-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(138,43,226,0.4) 0%, rgba(255,105,180,0.3) 50%, rgba(0,0,0,0.6) 100%);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.love-phrase {
+    text-align: left;
+    background: rgba(0,0,0,0.7);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,105,180,0.3);
+}
+
+.phrase-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #ffd700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Video Gallery Section */
+.video-gallery-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2b 100%);
+    padding: 60px 20px;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.gallery-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.gallery-subtitle {
+    color: #ffb6c1;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    background: linear-gradient(135deg, #8a2be2, #ff69b4);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255,105,180,0.3);
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.1);
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.volume-control i {
+    color: #ff69b4;
+    font-size: 1.2rem;
+}
+
+#volumeSlider {
+    width: 100px;
+    height: 5px;
+    -webkit-appearance: none;
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    outline: none;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ff69b4;
+    cursor: pointer;
+}
+
+/* Video Grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.video-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255,105,180,0.1);
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff69b4;
+    box-shadow: 0 15px 30px rgba(255,105,180,0.2);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.guitar-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: auto;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.video-wrapper:hover .video-overlay {
+    opacity: 1;
+}
+
+.play-btn {
+    background: rgba(255,105,180,0.8);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    position: relative;
+    z-index: 10;
+}
+
+.play-btn:hover {
+    background: rgba(255,105,180,1);
+    transform: scale(1.1);
+}
+
+.video-info {
+    padding: 20px;
+}
+
+.video-info h3 {
+    color: #ffd700;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.video-date {
+    color: #ffb6c1;
+    font-size: 0.9rem;
+}
+
+/* Mini Player */
+.mini-player {
+    background: rgba(0,0,0,0.7);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid rgba(255,105,180,0.3);
+    backdrop-filter: blur(10px);
+}
+
+.now-playing {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.now-playing i {
+    font-size: 1.8rem;
+    color: #ff69b4;
+}
+
+.track-title {
+    color: #ffd700;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.track-status {
+    color: #ffb6c1;
+    font-size: 0.9rem;
+}
+
+.player-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.player-btn {
+    background: rgba(255,105,180,0.2);
+    border: 2px solid rgba(255,105,180,0.3);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.player-btn:hover {
+    background: rgba(255,105,180,0.4);
+    border-color: #ff69b4;
+}
+
+.main-play-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #ff69b4, #8a2be2);
+}
+
+/* Dedication Box */
+.dedication-box {
+    max-width: 700px;
+    margin: 60px auto 30px;
+    background: rgba(255,105,180,0.1);
+    border-radius: 20px;
+    padding: 40px;
+    border: 2px solid rgba(255,105,180,0.3);
+    text-align: center;
+}
+
+.dedication-text {
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+    color: #ffd700;
+    margin-top: 25px;
+}
+
+/* Video Playing State */
+.video-card.playing {
+    border-color: #ff69b4;
+    box-shadow: 0 0 20px rgba(255,105,180,0.5);
+}
+
+.video-card.playing .play-btn {
+    background: rgba(255,0,100,0.9);
+}
+
+/* Floating Music Notes */
+.floating-notes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.music-note {
+    position: absolute;
+    font-size: 24px;
+    color: rgba(255,105,180,0.3);
+    animation: floatNote 8s linear infinite;
+}
+
+@keyframes floatNote {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.7; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .phrase-text {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Page 4 Video Hero with Sound */
+.video-hero-section {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 500px;
+    margin-top: 60px;
+    overflow: hidden;
+}
+
+.video-hero-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(138, 43, 226, 0.3) 0%,
+        rgba(255, 105, 180, 0.2) 50%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+    z-index: 1;
+}
+
+.sound-control {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    color: #ffd700;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.sound-control:hover {
+    background: rgba(255, 105, 180, 0.8);
+    transform: scale(1.1);
+    border-color: #ff69b4;
+}
+
+.sound-control.sound-on {
+    background: rgba(255, 105, 180, 0.8);
+    color: white;
+}
+
+.hero-overlay-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+    pointer-events: none;
+}
+
+.hero-overlay-content .love-phrase {
+    pointer-events: auto;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 105, 180, 0.3);
+    margin-bottom: 40px;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    .video-hero-section {
+        height: 50vh;
+        min-height: 400px;
+    }
+    
+    .hero-overlay-content {
+        padding: 20px;
+    }
+    
+    .hero-overlay-content .love-phrase {
+        padding: 20px;
+    }
+    
+    .phrase-text {
+        font-size: 2rem;
+    }
+    
+    .sound-control {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+/* PAGE 5 - Final */
+.final-page {
+    padding-top: 80px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a0b0b, #ff0066, #1a0b0b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.final-content {
+    text-align: center;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    border-radius: 30px;
+    border: 3px solid rgba(255, 215, 0, 0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.valentine-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #ffd700;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.heart-rain {
+    height: 100px;
+    margin: 30px 0;
+    position: relative;
+}
+
+.final-message {
+    margin: 40px 0;
+}
+
+.final-message p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.eternal-love {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.eternal-love i {
+    font-size: 4rem;
+    color: #ff69b4;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.eternal-love p {
+    font-size: 1.5rem;
+    color: #ffd700;
+    font-style: italic;
+}
+
+.final-signature {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.final-signature p {
+    color: #ffb6c1;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.final-signature h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #ffd700;
+}
+
+/* Heart Animations */
+.heart {
+    position: absolute;
+    color: #ff69b4;
+    font-size: 24px;
+    animation: float 6s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .question {
+        font-size: 2.5rem;
+        padding: 0 20px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .yes-btn, .no-btn {
+        width: 100%;
+        max-width: 300px;
+        padding: 18px 30px;
+    }
+    
+    .letter-wrapper {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+    
+    .letter-header h1 {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .letter-content {
+        font-size: 1rem;
+    }
+    
+    .signature {
+        font-size: 2rem;
+    }
+    
+    .page-title h2 {
+        font-size: 2.5rem;
+    }
+    
+    .memories-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .love-facts {
+        grid-template-columns: 1fr;
+    }
+    
+    .message-box p {
+        font-size: 1.4rem;
+    }
+    
+    .valentine-title {
+        font-size: 3rem;
+    }
+    
+    .nav-buttons {
+        gap: 10px;
+    }
+    
+    .nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .question {
+        font-size: 2rem;
+    }
+    
+    .letter-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-title h2 {
+        font-size: 2rem;
+    }
+    
+    .valentine-title {
+        font-size: 2.5rem;
+    }
+    
+    .final-content {
+        padding: 30px 20px;
+    }
+}
+/* Add these styles to your existing style.css file */
+
+/* Golden Diamond Border for Letter */
+.letter-wrapper {
+    background: rgba(255, 245, 245, 0.98);
+    border-radius: 5px;
+    padding: 50px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+    border: 20px solid transparent;
+    background-clip: padding-box;
+}
+
+/* Create the golden diamond border */
+.letter-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    z-index: -1;
+    background: linear-gradient(
+        45deg,
+        #d4af37 0%,
+        #ffd700 25%,
+        #f0e68c 50%,
+        #ffd700 75%,
+        #d4af37 100%
+    );
+    border-radius: 10px;
+    padding: 4px;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* Diamond pattern overlay */
+.letter-wrapper::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    z-index: -1;
+    background-image: 
+        /* Diamond shapes */
+        linear-gradient(45deg, transparent 45%, rgba(255, 215, 0, 0.3) 46%, rgba(255, 215, 0, 0.3) 54%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, rgba(255, 215, 0, 0.3) 46%, rgba(255, 215, 0, 0.3) 54%, transparent 55%),
+        linear-gradient(45deg, transparent 45%, rgba(184, 134, 11, 0.2) 46%, rgba(184, 134, 11, 0.2) 54%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, rgba(184, 134, 11, 0.2) 46%, rgba(184, 134, 11, 0.2) 54%, transparent 55%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px 0, 20px 20px;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+/* Corner embellishments */
+.letter-wrapper .corner-decoration {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+/* Top-left corner */
+.letter-wrapper .corner-decoration.tl {
+    top: -30px;
+    left: -30px;
+    background: 
+        radial-gradient(circle at 30px 30px, #d4af37 0%, transparent 70%),
+        repeating-linear-gradient(45deg, transparent, transparent 10px, #ffd700 10px, #ffd700 11px);
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+/* Top-right corner */
+.letter-wrapper .corner-decoration.tr {
+    top: -30px;
+    right: -30px;
+    background: 
+        radial-gradient(circle at 30px 30px, #d4af37 0%, transparent 70%),
+        repeating-linear-gradient(-45deg, transparent, transparent 10px, #ffd700 10px, #ffd700 11px);
+    border-radius: 50%;
+    transform: rotate(-45deg);
+}
+
+/* Bottom-left corner */
+.letter-wrapper .corner-decoration.bl {
+    bottom: -30px;
+    left: -30px;
+    background: 
+        radial-gradient(circle at 30px 30px, #d4af37 0%, transparent 70%),
+        repeating-linear-gradient(-45deg, transparent, transparent 10px, #ffd700 10px, #ffd700 11px);
+    border-radius: 50%;
+    transform: rotate(-135deg);
+}
+
+/* Bottom-right corner */
+.letter-wrapper .corner-decoration.br {
+    bottom: -30px;
+    right: -30px;
+    background: 
+        radial-gradient(circle at 30px 30px, #d4af37 0%, transparent 70%),
+        repeating-linear-gradient(45deg, transparent, transparent 10px, #ffd700 10px, #ffd700 11px);
+    border-radius: 50%;
+    transform: rotate(135deg);
+}
+
+/* Diamond studs along the border */
+.letter-wrapper .border-diamond {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(45deg, #ffd700, #fff8dc, #ffd700);
+    transform: rotate(45deg);
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Position diamond studs */
+.letter-wrapper .border-diamond.top {
+    top: -25px;
+    border-top: 2px solid #b8860b;
+}
+
+.letter-wrapper .border-diamond.bottom {
+    bottom: -25px;
+    border-bottom: 2px solid #b8860b;
+}
+
+.letter-wrapper .border-diamond.left {
+    left: -25px;
+    border-left: 2px solid #b8860b;
+}
+
+.letter-wrapper .border-diamond.right {
+    right: -25px;
+    border-right: 2px solid #b8860b;
+}
+
+/* Remove the old border classes */
+.gold-border {
+    display: none;
+}
